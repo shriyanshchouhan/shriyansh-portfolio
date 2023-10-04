@@ -1,38 +1,287 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+  background-color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+aside, menu, nav, section {
+    display: block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  line-height: 1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 125%;
+    background: rgb(255, 255, 255);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #333;
+    position: relative;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+a:focus {
+  outline: thin dotted;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+a:active,
+a:hover {
+    outline: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    margin: 0;
+    vertical-align: baseline;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.visuallyHidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0);
+  overflow: hidden;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+section {
+  padding: 80px 0;
+}
+
+.outerWrapper {
+  width: calc(100% - 90px);
+  margin-left: 90px;
+  overflow: hidden;
+}
+
+.innerWrapper {
+  padding: 0 33px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.sectionContainer {
+  background-color: white;
+  border-radius: 50px;
+  padding: 48px;
+}
+
+.menuButton {
+  cursor: pointer;
+  position: fixed;
+  height: 30px;
+  width: 35px;
+  padding: 10px;
+  top: 35px;
+  right: 25px;
+  z-index: 20;
+  display: none;
+}
+
+.menuButton:focus {
+  border: 2px solid #00A2E2;
+}
+
+.menuButton .linesContainer {
+  position: relative;
+}
+
+.menuButton .linesContainer span,
+.menuButton .linesContainer span:before,
+.menuButton .linesContainer span:after {
+    border-radius: 5px;
+    width: 25px;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    display: block;
+    content: '';
+}
+
+.menuButton .linesContainer span {
+  top: 3px;
+  left: -6px;
+}
+
+.menuButton .linesContainer span:before {
+  top: -10px;
+}
+
+.menuButton .linesContainer span:after {
+  bottom: -10px;
+}
+
+.sideMenu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 105px;
+  height: 100vh;
+  background-color: #00A2E2;
+  position: fixed;
+  color: black;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  z-index: 10;
+}
+
+.sideMenu p {
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 3rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  background-color: #007eb0;
+}
+
+.sideMenu nav {
+  padding: 26px;
+}
+
+.sideMenu nav a {
+  color: black;
+  padding: 13px 17px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 3rem;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  border-radius: 6px;
+  width: 100%;
+  position: relative;
+}
+
+.sideMenu nav a span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  position: absolute;
+  left: 55px;
+  top: 18px;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  transition: 0.1s;
+}
+
+.sideMenu nav a:hover,
+.sideMenu nav a:focus {
+    background-color: #47acd3;
+    /* filter: blur(1px); */
+    -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.sideMenu .scrollDown {
+  height: 50px;
+  position: relative;
+  left: 35px;
+}
+
+.sideMenu .scrollDown .lni-arrow-down {
+  line-height: 1.2;
+  font-size: 2rem;
+}
+
+.sideMenu .scrollDown .scrollDownText {
+  font-size: 0.75rem;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  font-weight: 300;
+}
+
+.hoverMenu {
+  width: 220px;
+}
+
+.menuShow {
+  display: block;
+}
+
+.menuHide {
+  display: none;
+}
+
+.sideMenuHide {
+  left: -300px;
+}
+
+.sideMenuShow {
+  left: 0;
+}
+
+.sideMenu .navItemName {
+  transition: ease-in-out 2s ;
+}
+
+@media (min-width: 991px) {
+  .navItemName {
+      display: none;
   }
-  to {
-    transform: rotate(360deg);
+  .sideMenu:hover {
+      width: 220px;
+  }
+  .sideMenu:hover .navItemName {
+      display: block;
   }
 }
